@@ -1,0 +1,62 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+*.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE configs
+.vscode/
+.idea/
+
+# Build / dist
+build/
+dist/
+*.egg-info/
+
+# Data files (keep raw data outside repo or use DVC/other storage)
+data/
+datasets/
+*.csv
+*.tsv
+*.parquet
+*.h5
+*.db
+
+# Models
+*.pkl
+*.joblib
+*.h5
+*.onnx
+*.pb
+
+# Large outputs
+outputs/
+results/
+plots/
+
+# Coverage / test
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+
+# Environment + dependencies
+requirements.txt.lock
+poetry.lock
+Pipfile.lock
