@@ -47,8 +47,8 @@ df['cluster'] = kmeans.fit_predict(X_scaled)
 
 print(df.head())
 
-model_path = os.path.join(os.path.dirname(__file__),'f:/health-tracker/app/ml/k-means_model.joblib')
-scaler_path = os.path.join(os.path.dirname(__file__),'f:/health-tracker/app/ml/scaler.joblib')
+model_path = os.path.join(os.path.dirname(__file__),'f:/health-tracker/app/models/k-means_model.joblib')
+scaler_path = os.path.join(os.path.dirname(__file__),'f:/health-tracker/app/models/scaler.joblib')
 
 joblib.dump(kmeans,model_path)
 joblib.dump(scaler,scaler_path)
