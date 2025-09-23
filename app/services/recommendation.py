@@ -13,15 +13,15 @@ scaler_xgboost_path = os.path.join(os.path.dirname(__file__), 'f:/health-tracker
 xgb_model = joblib.load(xgboost_model_path)
 scaler_xgboost = joblib.load(scaler_xgboost_path)
 
-clsuter_features = ['steps','workout_minutes','calories_burned','HR_rest','HR_active','BMI']
+cluster_features = ['steps','workout_minutes','calories_burned','HR_rest','HR_active','BMI']
 xgb_features = ['steps','HR_rest','HR_active','workout_minutes','BMI']
 
-def assign_custer(indut_data:pd.DataFrame) -> pd.Series:
-    X_scaled = scaler.transform(indut_data[clsuter_features])
+def assign_custer(input_data:pd.DataFrame) -> pd.Series:
+    X_scaled = scaler.transform(input_data[cluster_features])
     return kmeans.predict(X_scaled)
 
-def predict_calories(indut_data:pd.DataFrame) -> np.ndarray:
-    X_scaled = scaler_xgboost.transform(indut_data[xgb_features])
+def predict_calories(input_data:pd.DataFrame) -> np.ndarray:
+    X_scaled = scaler_xgboost.transform(input_data[xgb_features])
     return xgb_model.predict(X_scaled)
 
 def generate_dynamic_recommendations(row):
