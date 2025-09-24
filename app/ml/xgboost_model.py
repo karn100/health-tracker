@@ -14,7 +14,7 @@ print(df.head())
 target = 'calories_burned'
 features = ['steps','HR_rest','HR_active','workout_minutes','BMI']
 
-if 'clsuter' in df.columns:
+if 'cluster' in df.columns:
     features.append('cluster')
 
 X = df[features]
