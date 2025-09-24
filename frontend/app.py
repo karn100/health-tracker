@@ -36,7 +36,7 @@ if st.button("Get Recommendation"):
         "calories_burned": calories_burned
     }]
 
-    api_url = "http://127.0.0.1:8001/health/predict"
+    api_url = "http://127.0.0.1:8000/health/predict"
     response = requests.post(api_url, json=input_data)
     
     if response.status_code == 200:
