@@ -14,7 +14,7 @@ xgb_model = joblib.load(xgboost_model_path)
 scaler_xgboost = joblib.load(scaler_xgboost_path)
 
 cluster_features = ['steps','workout_minutes','calories_burned','HR_rest','HR_active','BMI']
-xgb_features = ['steps','HR_rest','HR_active','workout_minutes','BMI']
+xgb_features = ['steps','HR_rest','HR_active','workout_minutes','BMI','cluster']
 
 def assign_custer(input_data:pd.DataFrame) -> pd.Series:
     X_scaled = scaler.transform(input_data[cluster_features])
